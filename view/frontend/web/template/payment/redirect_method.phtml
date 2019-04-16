@@ -1,0 +1,70 @@
+<!--
+/**
+ * Cmsbox.fr Magento 2 Paybox Payment.
+ *
+ * PHP version 7
+ *
+ * @category  Cmsbox
+ * @package   Paybox
+ * @author    Cmsbox Development Team <contact@cmsbox.fr>
+ * @copyright 2019 Cmsbox.fr all rights reserved
+ * @license   https://opensource.org/licenses/mit-license.html MIT License
+ * @link      https://www.cmsbox.fr
+ */
+-->
+
+<div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
+    <div class="payment-method-title field choice">
+        <input type="radio" name="payment[method]" class="radio" data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()" />
+        <label class="label" data-bind="attr: {'for': getCode()}">
+            <span data-bind="text: getTitle()"></span>
+        </label>
+    </div>
+
+    <div class="payment-method-content">
+        <div class="message" style="display: none"></div>
+        <div>
+            <form class="form" data-bind="attr: {id: targetForm, action: config.api_url}" method="POST" novalidate="novalidate" style="display:none">
+                <input type="hidden" name="PBX_SITE" data-bind="attr: {value: config.PBX_SITE}">
+                <input type="hidden" name="PBX_RANG" data-bind="attr: {value: config.PBX_RANG}">
+                <input type="hidden" name="PBX_IDENTIFIANT" data-bind="attr: {value: config.PBX_IDENTIFIANT}">
+                <input type="hidden" name="PBX_TOTAL" data-bind="attr: {value: config.PBX_TOTAL}">
+                <input type="hidden" name="PBX_DEVISE" data-bind="attr: {value: config.PBX_DEVISE}">
+                <input type="hidden" name="PBX_CMD" data-bind="attr: {value: config.PBX_CMD}">
+                <input type="hidden" name="PBX_PORTEUR" data-bind="attr: {value: config.PBX_PORTEUR}">
+                <input type="hidden" name="PBX_RETOUR" data-bind="attr: {value: config.PBX_RETOUR}">
+                <input type="hidden" name="PBX_HASH" data-bind="attr: {value: config.PBX_HASH}">
+                <input type="hidden" name="PBX_TIME" data-bind="attr: {value: config.PBX_TIME}">
+                <input type="hidden" name="PBX_HMAC" data-bind="attr: {value: config.PBX_HMAC}">
+            </form>
+        </div>
+
+        <div class="payment-method-billing-address">
+            <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+            <!-- ko template: getTemplate() -->
+            <!-- /ko -->
+            <!--/ko-->
+        </div>
+
+        <div class="checkout-agreements-block">
+            <!-- ko foreach: $parent.getRegion('before-place-order') -->
+            <!-- ko template: getTemplate() -->
+            <!-- /ko -->
+            <!--/ko-->
+        </div>
+
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button class="action primary checkout" type="submit" data-bind="
+                        id: targetButton,
+                        click: beforePlaceOrder,
+                        attr: {title: $t(config.button_label)},
+                        css: {disabled: !isPlaceOrderActionAllowed()},
+                        enable: (getCode() == isChecked())
+                        " disabled>
+                    <span data-bind="i18n: config.button_label"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
