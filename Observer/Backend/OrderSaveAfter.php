@@ -8,12 +8,12 @@
  * MIT License
  */
 
-namespace Cmsbox\Paybox\Observer\Backend;
+namespace Naxero\Paybox\Observer\Backend;
 
 use Magento\Framework\Event\Observer;
 use Magento\Sales\Model\Order\Payment\Transaction;
-use Cmsbox\Paybox\Gateway\Processor\Connector;
-use Cmsbox\Paybox\Gateway\Config\Core;
+use Naxero\Paybox\Gateway\Processor\Connector;
+use Naxero\Paybox\Gateway\Config\Core;
 
 class OrderSaveAfter implements \Magento\Framework\Event\ObserverInterface
 {
@@ -48,10 +48,10 @@ class OrderSaveAfter implements \Magento\Framework\Event\ObserverInterface
      */
     public function __construct(
         \Magento\Backend\Model\Auth\Session $backendAuthSession,
-        \Cmsbox\Paybox\Gateway\Http\Client $client,
-        \Cmsbox\Paybox\Gateway\Config\Config $config,
-        \Cmsbox\Paybox\Model\Service\TransactionHandlerService $transactionHandler,
-        \Cmsbox\Paybox\Helper\Watchdog $watchdog
+        \Naxero\Paybox\Gateway\Http\Client $client,
+        \Naxero\Paybox\Gateway\Config\Config $config,
+        \Naxero\Paybox\Model\Service\TransactionHandlerService $transactionHandler,
+        \Naxero\Paybox\Helper\Watchdog $watchdog
     ) {
         $this->backendAuthSession = $backendAuthSession;
         $this->client             = $client;

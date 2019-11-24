@@ -1,21 +1,21 @@
 <?php
 /**
- * Cmsbox.fr Magento 2 Paybox Payment.
+ * Naxero.com Magento 2 Paybox Payment.
  *
  * PHP version 7
  *
- * @category  Cmsbox
+ * @category  Naxero
  * @package   Paybox
- * @author    Cmsbox Development Team <contact@cmsbox.fr>
- * @copyright 2019 Cmsbox.fr all rights reserved
+ * @author    Naxero Development Team <contact@naxero.com>
+ * @copyright 2019 Naxero.com all rights reserved
  * @license   https://opensource.org/licenses/mit-license.html MIT License
- * @link      https://www.cmsbox.fr
+ * @link      https://www.naxero.com
  */
 
-namespace Cmsbox\Paybox\Gateway\Http;
+namespace Naxero\Paybox\Gateway\Http;
 
 use Magento\Payment\Gateway\Request\BuilderInterface;
-use Cmsbox\Paybox\Gateway\Processor\Connector;
+use Naxero\Paybox\Gateway\Processor\Connector;
 
 class Client
 {
