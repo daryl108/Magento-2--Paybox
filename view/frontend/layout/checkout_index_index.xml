@@ -31,10 +31,7 @@
                                                                         </item>                                                                        
                                                                         <item name="naxero_paybox_form_method" xsi:type="array">
                                                                             <item name="isBillingAddressRequired" xsi:type="boolean">true</item>                                                                   
-                                                                        </item>
-                                                                        <item name="naxero_paybox_iframe_method" xsi:type="array">
-                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>                                                                   
-                                                                        </item>                                                                    
+                                                                        </item>                                                                 
                                                                     </item>
                                                                 </item>
                                                             </item>
