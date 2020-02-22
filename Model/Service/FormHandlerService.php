@@ -1,18 +1,18 @@
 <?php
 /**
- * Cmsbox.fr Magento 2 Paybox Payment.
+ * Naxero.com Magento 2 Paybox Payment.
  *
  * PHP version 7
  *
- * @category  Cmsbox
+ * @category  Naxero
  * @package   Paybox
- * @author    Cmsbox Development Team <contact@cmsbox.fr>
- * @copyright 2019 Cmsbox.fr all rights reserved
+ * @author    Naxero Development Team <contact@naxero.com>
+ * @copyright 2019 Naxero.com all rights reserved
  * @license   https://opensource.org/licenses/mit-license.html MIT License
- * @link      https://www.cmsbox.fr
+ * @link      https://www.naxero.com
  */
 
-namespace Cmsbox\Paybox\Model\Service;
+namespace Naxero\Paybox\Model\Service;
 
 class FormHandlerService
 {
@@ -36,8 +36,8 @@ class FormHandlerService
      * FormHandlerService constructor.
      */
     public function __construct(
-        \Cmsbox\Paybox\Gateway\Config\Config $config,
-        \Cmsbox\Paybox\Helper\Watchdog $watchdog,
+        \Naxero\Paybox\Gateway\Config\Config $config,
+        \Naxero\Paybox\Helper\Watchdog $watchdog,
         \Magento\Payment\Model\Config $paymentConfig
     ) {
         $this->config             = $config;

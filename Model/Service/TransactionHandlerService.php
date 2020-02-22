@@ -1,22 +1,22 @@
 <?php
 /**
- * Cmsbox.fr Magento 2 Paybox Payment.
+ * Naxero.com Magento 2 Paybox Payment.
  *
  * PHP version 7
  *
- * @category  Cmsbox
+ * @category  Naxero
  * @package   Paybox
- * @author    Cmsbox Development Team <contact@cmsbox.fr>
- * @copyright 2019 Cmsbox.fr all rights reserved
+ * @author    Naxero Development Team <contact@naxero.com>
+ * @copyright 2019 Naxero.com all rights reserved
  * @license   https://opensource.org/licenses/mit-license.html MIT License
- * @link      https://www.cmsbox.fr
+ * @link      https://www.naxero.com
  */
 
-namespace Cmsbox\Paybox\Model\Service;
+namespace Naxero\Paybox\Model\Service;
 
 use Magento\Sales\Model\Order\Payment\Transaction;
-use Cmsbox\Paybox\Gateway\Config\Core;
-use Cmsbox\Paybox\Gateway\Processor\Connector;
+use Naxero\Paybox\Gateway\Config\Core;
+use Naxero\Paybox\Gateway\Processor\Connector;
 
 class TransactionHandlerService
 {
@@ -66,9 +66,9 @@ class TransactionHandlerService
     public function __construct(
         \Magento\Sales\Model\Order\Payment\Transaction\BuilderInterface $transactionBuilder,
         \Magento\Framework\Message\ManagerInterface $messageManager,
-        \Cmsbox\Paybox\Model\Service\InvoiceHandlerService $invoiceHandler,
-        \Cmsbox\Paybox\Gateway\Config\Config $config,
-        \Cmsbox\Paybox\Helper\Watchdog $watchdog,
+        \Naxero\Paybox\Model\Service\InvoiceHandlerService $invoiceHandler,
+        \Naxero\Paybox\Gateway\Config\Config $config,
+        \Naxero\Paybox\Helper\Watchdog $watchdog,
         \Magento\Framework\Api\SearchCriteriaBuilder $searchCriteriaBuilder,
         \Magento\Framework\Api\FilterBuilder $filterBuilder,
         \Magento\Sales\Model\Order\Payment\Transaction\Repository $transactionRepository

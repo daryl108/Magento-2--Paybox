@@ -2,10 +2,10 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <base>
-            <module_id>cmsbox_paybox</module_id>
-            <module_name>Cmsbox_Paybox</module_name>
-            <module_label>Cmsbox Paybox</module_label>
-            <module_url><![CDATA[https://www.cmsbox.fr]]></module_url>
+            <module_id>naxero_paybox</module_id>
+            <module_name>Naxero_Paybox</module_name>
+            <module_label>Naxero Paybox</module_label>
+            <module_url><![CDATA[https://www.naxero.com]]></module_url>
             <exclude>model,simu_secret_key,test_secret_key</exclude>
             <supported_currencies>EUR,978;USD,840;CHF,756;GBP,826;CAD,124;JPY,392;MXP,484;TRY,949;AUD,036;NZD,554;NOK,578;BRC,986;ARP,032;KHR,116;TWD,901;SEK,752;DKK,208;KRW,410;SGD,702;XPF,953;XOF,952</supported_currencies>
             <customer_email_field>customerEmail</customer_email_field>
@@ -14,15 +14,13 @@
             <transaction_id_field>transactionReference</transaction_id_field>
         </base>
         <payment>
-            <cmsbox_paybox>
-                <model>Cmsbox\Paybox\Model\Methods\RedirectMethod</model>
+            <naxero_paybox>
+                <model>Naxero\Paybox\Model\Methods\RedirectMethod</model>
                 <debug>0</debug>
                 <logging>1</logging>
                 <new_order_status>pending</new_order_status>
                 <order_status_authorized>pending_payment</order_status_authorized>
                 <order_status_captured>processing</order_status_captured>
-                <accepted_currencies>AFN,ALL,DZD,AOA,ARS,AMD,AWG,AUD,AZN,AZM,BSD,BHD,BDT,BBD,BYR,BZD,BMD,BTN,BOB,BAM,BWP,BRL,GBP,BND,BGN,BUK,BIF,XOF,XPF,KHR,CAD,CVE,KYD,CLP,CNY,COP,KMF,CDF,CRC,HRK,CUP,CZK,DKK,DJF,DOP,XCD,EGP,GQE,ERN,EEK,ETB,EUR,FKP,FJD,GMD,GEK,GEL,GHS,GIP,GTQ,GNF,GYD,HTG,HNL,HKD,HUF,ISK,INR,IDR,IRR,IQD,ILS,JMD,JPY,JOD,KZT,KES,KWD,KGS,LAK,LVL,LBP,LSL,LRD,LYD,LTL,MOP,MKD,MGA,MWK,MYR,MVR,MRO,MUR,MXN,MDL,MNT,MAD,MZN,MMK,NAD,NPR,ANG,TWD,NZD,NIC,NGN,KPW,NOK,OMR,PKR,PAB,PGK,PYG,PEN,PHP,PLN,QAR,RHD,RON,ROL,RUB,RWF,SHP,SVC,WST,SAR,RSD,SCR,SLL,SGD,SKK,SBD,SOS,ZAR,KRW,LKR,SDG,SRD,SZL,SEK,CHF,SYP,STD,TJS,TZS,THB,TOP,TTD,TND,TRY,TRL,TMM,USD,UGX,UAH,AED,UYU,UZS,VUV,VEF,VEB,VND,CHE,CHW,YER,ZMK,ZWD</accepted_currencies>
-                <accepted_countries>AF,AX,AL,DZ,AS,AD,AO,AI,AQ,AG,AR,AM,AW,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BM,BT,BO,BA,BW,BV,BR,IO,VG,BN,BG,BF,BI,KH,CM,CA,CV,KY,CF,TD,CL,CN,CX,CC,CO,KM,CG,CD,CK,CR,CI,HR,CU,CY,CZ,DK,DJ,DM,DO,EC,EG,SV,GQ,ER,EE,ET,FK,FO,FJ,FI,FR,GF,PF,TF,GA,GM,GE,DE,GH,GI,GR,GL,GD,GP,GU,GT,GG,GN,GW,GY,HT,HM,HN,HK,HU,IS,IN,ID,IR,IQ,IE,IM,IL,IT,JM,JP,JE,JO,KZ,KE,KI,KW,KG,LA,LV,LB,LS,LR,LY,LI,LT,LU,MO,MK,MG,MW,MY,MV,ML,MT,MH,MQ,MR,MU,YT,MX,FM,MD,MC,MN,ME,MS,MA,MZ,MM,NA,NR,NP,NL,AN,NC,NZ,NI,NE,NG,NU,NF,MP,KP,NO,OM,PK,PW,PS,PA,PG,PY,PE,PH,PN,PL,PT,QA,RE,RO,RU,RW,BL,SH,KN,LC,MF,PM,WS,SM,ST,SA,SN,RS,SC,SL,SG,SK,SI,SB,SO,ZA,GS,KR,ES,LK,VC,SD,SR,SJ,SZ,SE,CH,SY,TW,TJ,TZ,TH,TL,TG,TK,TO,TT,TN,TR,TM,TC,TV,UG,UA,AE,GB,US,UY,UM,VI,UZ,VU,VA,VE,VN,WF,EH,YE,ZM,ZW</accepted_countries>
                 <environment>test</environment>
                 <sort_order>1</sort_order>        
                 <pbx_site>1999888</pbx_site>
@@ -30,10 +28,10 @@
                 <pbx_identifiant>107904482</pbx_identifiant>
                 <email_cookie_name>guestEmail</email_cookie_name>
                 <method_cookie_name>methodId</method_cookie_name>
-            </cmsbox_paybox>
-            <cmsbox_paybox_redirect_method>
-                <method_id>cmsbox_paybox_redirect_method</method_id>
-                <model>Cmsbox\Paybox\Model\Methods\RedirectMethod</model>
+            </naxero_paybox>
+            <naxero_paybox_redirect_method>
+                <method_id>naxero_paybox_redirect_method</method_id>
+                <model>Naxero\Paybox\Model\Methods\RedirectMethod</model>
                 <can_use_checkout>1</can_use_checkout>
                 <can_authorize>1</can_authorize>
                 <can_capture>1</can_capture>
@@ -57,10 +55,10 @@
                 <api_url_test_charge><![CDATA[https://preprod-tpeweb.paybox.com/cgi/MYchoix_pagepaiement.cgi]]></api_url_test_charge>
                 <api_url_prod_charge><![CDATA[https://tpeweb.paybox.com/cgi/MYchoix_pagepaiement.cgi]]></api_url_prod_charge>
                 <load_request_data>1</load_request_data>
-            </cmsbox_paybox_redirect_method>
-            <cmsbox_paybox_form_method>
-                <method_id>cmsbox_paybox_form_method</method_id>
-                <model>Cmsbox\Paybox\Model\Methods\FormMethod</model>
+            </naxero_paybox_redirect_method>
+            <naxero_paybox_form_method>
+                <method_id>naxero_paybox_form_method</method_id>
+                <model>Naxero\Paybox\Model\Methods\FormMethod</model>
                 <can_use_checkout>1</can_use_checkout>
                 <can_authorize>1</can_authorize>
                 <can_capture>1</can_capture>
@@ -114,40 +112,10 @@
                 <template_3_corner_radius>6px</template_3_corner_radius>
                 <template_3_input_text_color>#CCCCCC</template_3_input_text_color>
                 <template_3_input_background_color>#FFFFFF</template_3_input_background_color>
-            </cmsbox_paybox_form_method>
-            <cmsbox_paybox_iframe_method>
-                <method_id>cmsbox_paybox_iframe_method</method_id>
-                <model>Cmsbox\Paybox\Model\Methods\IframeMethod</model>
-                <can_use_checkout>1</can_use_checkout>
-                <can_authorize>1</can_authorize>
-                <can_capture>1</can_capture>
-                <can_cancel>1</can_cancel>
-                <can_refund>1</can_refund>
-                <can_void>1</can_void>
-                <can_use_internal>0</can_use_internal>
-                <payment_action>authorize_capture</payment_action>                
-                <title>Iframe Card Payment (Paybox)</title>
-                <active>0</active>
-                <button_label>Place order</button_label>
-                <verify_3ds>0</verify_3ds>
-                <auto_generate_invoice>1</auto_generate_invoice>
-                <invoice_creation>capture</invoice_creation>
-                <capture_mode>IMMEDIATE</capture_mode>
-                <capture_day>0</capture_day>
-                <sort_order>3</sort_order>
-                <bypass_receipt>0</bypass_receipt>
-                <normal_return_url><![CDATA[response/normal]]></normal_return_url>
-                <automatic_response_url><![CDATA[response/automatic]]></automatic_response_url>
-                <api_url_test_charge><![CDATA[https://preprod-tpeweb.paybox.com/cgi/MYframepagepaiement_ip.cgi]]></api_url_test_charge>
-                <api_url_prod_charge><![CDATA[https://tpeweb.paybox.com/cgi/MYframepagepaiement_ip.cgi]]></api_url_prod_charge>
-                <load_request_data>1</load_request_data>
-                <iframe_width>100%</iframe_width>
-                <iframe_height>510px</iframe_height>
-                <iframe_border>1</iframe_border>
-            </cmsbox_paybox_iframe_method>
-            <cmsbox_paybox_admin_method>
-                <method_id>cmsbox_paybox_admin_method</method_id>
-                <model>Cmsbox\Paybox\Model\Methods\AdminMethod</model>
+            </naxero_paybox_form_method>
+            <naxero_paybox_admin_method>
+                <method_id>naxero_paybox_admin_method</method_id>
+                <model>Naxero\Paybox\Model\Methods\AdminMethod</model>
                 <can_use_checkout>1</can_use_checkout>
                 <can_authorize>1</can_authorize>
                 <can_capture>1</can_capture>
@@ -199,7 +167,7 @@
                 <template_3_corner_radius>6px</template_3_corner_radius>
                 <template_3_input_text_color>#CCCCCC</template_3_input_text_color>
                 <template_3_input_background_color>#FFFFFF</template_3_input_background_color>
-           </cmsbox_paybox_admin_method>
+           </naxero_paybox_admin_method>
         </payment>
     </default>
 </config>

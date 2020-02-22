@@ -1,21 +1,21 @@
 <?php
 /**
- * Cmsbox.fr Magento 2 Paybox Payment.
+ * Naxero.com Magento 2 Paybox Payment.
  *
  * PHP version 7
  *
- * @category  Cmsbox
+ * @category  Naxero
  * @package   Paybox
- * @author    Cmsbox Development Team <contact@cmsbox.fr>
- * @copyright 2019 Cmsbox.fr all rights reserved
+ * @author    Naxero Development Team <contact@naxero.com>
+ * @copyright 2019 Naxero.com all rights reserved
  * @license   https://opensource.org/licenses/mit-license.html MIT License
- * @link      https://www.cmsbox.fr
+ * @link      https://www.naxero.com
  */
 
-namespace Cmsbox\Paybox\Controller\Request;
+namespace Naxero\Paybox\Controller\Request;
  
-use Cmsbox\Paybox\Gateway\Config\Core;
-use Cmsbox\Paybox\Gateway\Processor\Connector;
+use Naxero\Paybox\Gateway\Config\Core;
+use Naxero\Paybox\Gateway\Processor\Connector;
 
 class Form extends \Magento\Framework\App\Action\Action
 {
@@ -66,11 +66,11 @@ class Form extends \Magento\Framework\App\Action\Action
         \Magento\Framework\App\Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $pageFactory,
         \Magento\Framework\Controller\Result\JsonFactory $jsonFactory,
-        \Cmsbox\Paybox\Model\Service\MethodHandlerService $methodHandler,
-        \Cmsbox\Paybox\Gateway\Config\Config $config,
-        \Cmsbox\Paybox\Model\Service\OrderHandlerService $orderHandler,
-        \Cmsbox\Paybox\Helper\Tools $tools,
-        \Cmsbox\Paybox\Helper\Watchdog $watchdog,
+        \Naxero\Paybox\Model\Service\MethodHandlerService $methodHandler,
+        \Naxero\Paybox\Gateway\Config\Config $config,
+        \Naxero\Paybox\Model\Service\OrderHandlerService $orderHandler,
+        \Naxero\Paybox\Helper\Tools $tools,
+        \Naxero\Paybox\Helper\Watchdog $watchdog,
         \Magento\Store\Model\StoreManagerInterface $storeManager
     ) {
         parent::__construct($context);

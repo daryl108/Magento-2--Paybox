@@ -1,18 +1,18 @@
 <?php
 /**
- * Cmsbox.fr Magento 2 Paybox Payment.
+ * Naxero.com Magento 2 Paybox Payment.
  *
  * PHP version 7
  *
- * @category  Cmsbox
+ * @category  Naxero
  * @package   Paybox
- * @author    Cmsbox Development Team <contact@cmsbox.fr>
- * @copyright 2019 Cmsbox.fr all rights reserved
+ * @author    Naxero Development Team <contact@naxero.com>
+ * @copyright 2019 Naxero.com all rights reserved
  * @license   https://opensource.org/licenses/mit-license.html MIT License
- * @link      https://www.cmsbox.fr
+ * @link      https://www.naxero.com
  */
 
-namespace Cmsbox\Paybox\Block\Payment;
+namespace Naxero\Paybox\Block\Payment;
 
 class Form extends \Magento\Framework\View\Element\Template
 {
@@ -46,8 +46,8 @@ class Form extends \Magento\Framework\View\Element\Template
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        \Cmsbox\Paybox\Model\Service\FormHandlerService $formHandler,
-        \Cmsbox\Paybox\Gateway\Config\Config $config,
+        \Naxero\Paybox\Model\Service\FormHandlerService $formHandler,
+        \Naxero\Paybox\Gateway\Config\Config $config,
         \Magento\Framework\View\Asset\Repository $assetRepository,
         array $data = []
     ) {

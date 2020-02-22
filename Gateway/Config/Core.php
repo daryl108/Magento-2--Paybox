@@ -1,24 +1,24 @@
 <?php
 /**
- * Cmsbox.fr Magento 2 Paybox Payment.
+ * Naxero.com Magento 2 Paybox Payment.
  *
  * PHP version 7
  *
- * @category  Cmsbox
+ * @category  Naxero
  * @package   Paybox
- * @author    Cmsbox Development Team <contact@cmsbox.fr>
- * @copyright 2019 Cmsbox.fr all rights reserved
+ * @author    Naxero Development Team <contact@naxero.com>
+ * @copyright 2019 Naxero.com all rights reserved
  * @license   https://opensource.org/licenses/mit-license.html MIT License
- * @link      https://www.cmsbox.fr
+ * @link      https://www.naxero.com
  */
  
-namespace Cmsbox\Paybox\Gateway\Config;
+namespace Naxero\Paybox\Gateway\Config;
 
 class Core
 {
-    const CODE = 'cmsbox_paybox';
-    const CODE_ADMIN = 'cmsbox_paybox_admin_method';
-    const CODE_FORM = 'cmsbox_paybox_form_method';
+    const CODE = 'naxero_paybox';
+    const CODE_ADMIN = 'naxero_paybox_admin_method';
+    const CODE_FORM = 'naxero_paybox_form_method';
     const KEY_METHOD_ID = 'method_id';
     const KEY_VERIFY_3DS = 'verify_3ds';
     const KEY_NORMAL_RETURN_URL = 'normal_return_url';
@@ -26,8 +26,6 @@ class Core
     const KEY_VERSION = 'key_version';
     const KEY_BYPASS_RECEIPT = 'bypass_receipt';
     const KEY_INVOICE_CREATION = 'invoice_creation';
-    const KEY_ACCEPTED_CURRENCIES = 'accepted_currencies';
-    const KEY_ACCEPTED_COUNTRIES = 'accepted_countries';
     const KEY_SUPPORTED_CURRENCIES = 'supported_currencies';
     const KEY_INTERFACE_VERSION_CHARGE = 'interface_version_charge';
     const KEY_CARD_NUMBER = 'number';

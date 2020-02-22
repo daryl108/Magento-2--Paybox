@@ -1,23 +1,23 @@
 <?php
 /**
- * Cmsbox.fr Magento 2 Paybox Payment.
+ * Naxero.com Magento 2 Paybox Payment.
  *
  * PHP version 7
  *
- * @category  Cmsbox
+ * @category  Naxero
  * @package   Paybox
- * @author    Cmsbox Development Team <contact@cmsbox.fr>
- * @copyright 2019 Cmsbox.fr all rights reserved
+ * @author    Naxero Development Team <contact@naxero.com>
+ * @copyright 2019 Naxero.com all rights reserved
  * @license   https://opensource.org/licenses/mit-license.html MIT License
- * @link      https://www.cmsbox.fr
+ * @link      https://www.naxero.com
  */
 
-namespace Cmsbox\Paybox\Model\Service;
+namespace Naxero\Paybox\Model\Service;
 
 use Magento\Customer\Api\Data\GroupInterface;
 use Magento\Sales\Model\Order\Payment\Transaction;
-use Cmsbox\Paybox\Gateway\Processor\Connector;
-use Cmsbox\Paybox\Gateway\Config\Core;
+use Naxero\Paybox\Gateway\Processor\Connector;
+use Naxero\Paybox\Gateway\Config\Core;
 
 class OrderHandlerService
 {
@@ -57,11 +57,6 @@ class OrderHandlerService
     protected $customerSession;
 
     /**
-     * @var OrderSender
-     */
-    protected $orderSender;
-
-    /**
      * @var OrderRepositoryInterface
      */
     protected $orderRepository;
@@ -88,15 +83,14 @@ class OrderHandlerService
         \Magento\Framework\Stdlib\CookieManagerInterface $cookieManager,
         \Magento\Quote\Model\QuoteFactory $quoteFactory,
         \Magento\Checkout\Model\Cart $cart,
-        \Cmsbox\Paybox\Model\Service\TransactionHandlerService $transactionHandler,
+        \Naxero\Paybox\Model\Service\TransactionHandlerService $transactionHandler,
         \Magento\Checkout\Model\Session $checkoutSession,
         \Magento\Customer\Model\Session $customerSession,
         \Magento\Quote\Model\QuoteManagement $quoteManagement,
-        \Magento\Sales\Model\Order\Email\Sender\OrderSender $orderSender,
         \Magento\Sales\Api\OrderRepositoryInterface $orderRepository,
         \Magento\Sales\Api\Data\OrderInterface $orderInterface,
-        \Cmsbox\Paybox\Helper\Watchdog $watchdog,
-        \Cmsbox\Paybox\Gateway\Config\Config $config
+        \Naxero\Paybox\Helper\Watchdog $watchdog,
+        \Naxero\Paybox\Gateway\Config\Config $config
     ) {
         $this->cookieManager         = $cookieManager;
         $this->quoteFactory          = $quoteFactory;
@@ -105,7 +99,6 @@ class OrderHandlerService
         $this->checkoutSession       = $checkoutSession;
         $this->customerSession       = $customerSession;
         $this->quoteManagement       = $quoteManagement;
-        $this->orderSender           = $orderSender;
         $this->orderRepository       = $orderRepository;
         $this->orderInterface        = $orderInterface;
         $this->watchdog              = $watchdog;
@@ -199,9 +192,6 @@ class OrderHandlerService
                 // Save the order
                 $this->orderRepository->save($order);
 
-                // Send the email
-                $this->orderSender->send($order);
-                
                 return $order;
             }
         } catch (\Exception $e) {
@@ -216,7 +206,7 @@ class OrderHandlerService
     public function prepareGuestQuote($quote, $email = null)
     {
         // Retrieve the user email
-        $guestEmail = ($email) ? $email : $this->findCustomerEmail();
+        $guestEmail = ($email) ? $email : $this->findCustomerEmail($quote);
 
         // Set the quote as guest
         $quote->setCustomerId(null)

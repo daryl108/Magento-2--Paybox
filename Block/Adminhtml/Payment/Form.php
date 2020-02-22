@@ -1,21 +1,21 @@
 <?php
 /**
- * Cmsbox.fr Magento 2 Paybox Payment.
+ * Naxero.com Magento 2 Paybox Payment.
  *
  * PHP version 7
  *
- * @category  Cmsbox
+ * @category  Naxero
  * @package   Paybox
- * @author    Cmsbox Development Team <contact@cmsbox.fr>
- * @copyright 2019 Cmsbox.fr all rights reserved
+ * @author    Naxero Development Team <contact@naxero.com>
+ * @copyright 2019 Naxero.com all rights reserved
  * @license   https://opensource.org/licenses/mit-license.html MIT License
- * @link      https://www.cmsbox.fr
+ * @link      https://www.naxero.com
  */
 
-namespace Cmsbox\Paybox\Block\Adminhtml\Payment;
+namespace Naxero\Paybox\Block\Adminhtml\Payment;
 
-use Cmsbox\Paybox\Gateway\Config\Core;
-use Cmsbox\Paybox\Gateway\Processor\Connector;
+use Naxero\Paybox\Gateway\Config\Core;
+use Naxero\Paybox\Gateway\Processor\Connector;
 
 class Form extends \Magento\Payment\Block\Form\Cc
 {
@@ -60,8 +60,8 @@ class Form extends \Magento\Payment\Block\Form\Cc
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Payment\Model\Config $paymentModelConfig,
-        \Cmsbox\Paybox\Model\Service\FormHandlerService $formHandler,
-        \Cmsbox\Paybox\Gateway\Config\Config $config,
+        \Naxero\Paybox\Model\Service\FormHandlerService $formHandler,
+        \Naxero\Paybox\Gateway\Config\Config $config,
         \Magento\Framework\View\Asset\Repository $assetRepository
     ) {
         // Parent constructor

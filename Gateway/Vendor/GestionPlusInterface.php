@@ -1,5 +1,5 @@
 <?php
-namespace Cmsbox\Paybox\Gateway\Vendor;
+namespace Naxero\Paybox\Gateway\Vendor;
 
 class GestionPlusInterface
 {

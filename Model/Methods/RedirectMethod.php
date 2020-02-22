@@ -1,26 +1,26 @@
 <?php
 /**
- * Cmsbox.fr Magento 2 Paybox Payment.
+ * Naxero.com Magento 2 Paybox Payment.
  *
  * PHP version 7
  *
- * @category  Cmsbox
+ * @category  Naxero
  * @package   Paybox
- * @author    Cmsbox Development Team <contact@cmsbox.fr>
- * @copyright 2019 Cmsbox.fr all rights reserved
+ * @author    Naxero Development Team <contact@naxero.com>
+ * @copyright 2019 Naxero.com all rights reserved
  * @license   https://opensource.org/licenses/mit-license.html MIT License
- * @link      https://www.cmsbox.fr
+ * @link      https://www.naxero.com
  */
 
-namespace Cmsbox\Paybox\Model\Methods;
+namespace Naxero\Paybox\Model\Methods;
 
 use Magento\Framework\DataObject;
 use Magento\Quote\Api\Data\PaymentInterface;
 use Magento\Framework\Module\Dir;
-use Cmsbox\Paybox\Gateway\Config\Core;
-use Cmsbox\Paybox\Helper\Tools;
-use Cmsbox\Paybox\Gateway\Processor\Connector;
-use Cmsbox\Paybox\Gateway\Config\Config;
+use Naxero\Paybox\Gateway\Config\Core;
+use Naxero\Paybox\Helper\Tools;
+use Naxero\Paybox\Gateway\Processor\Connector;
+use Naxero\Paybox\Gateway\Config\Config;
 class RedirectMethod extends \Magento\Payment\Model\Method\AbstractMethod
 {
 
@@ -60,7 +60,7 @@ class RedirectMethod extends \Magento\Payment\Model\Method\AbstractMethod
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \Magento\Payment\Model\Method\Logger $logger,
         \Magento\Backend\Model\Auth\Session $backendAuthSession,
-        \Cmsbox\Paybox\Gateway\Config\Config $config,
+        \Naxero\Paybox\Gateway\Config\Config $config,
         \Magento\Checkout\Model\Cart $cart,
         \Magento\Framework\UrlInterface $urlBuilder,
         \Magento\Framework\ObjectManagerInterface $objectManager,
@@ -205,25 +205,6 @@ class RedirectMethod extends \Magento\Payment\Model\Method\AbstractMethod
         // Get the quote entity
         $entity = $config->cart->getQuote();
 
-        // Check the currency status
-        $currencyAccepted = in_array(
-            $entity->getQuoteCurrencyCode(),
-            explode(',', $config->params[Core::moduleId()][Core::KEY_ACCEPTED_CURRENCIES])
-        );
-
-        // Check the billing country status
-        $countryAccepted = in_array(
-            $entity->getBillingAddress()->getCountryId(),
-            explode(',', $config->params[Core::moduleId()][Core::KEY_ACCEPTED_COUNTRIES])
-        ) && in_array(
-            $entity->getShippingAddress()->getCountryId(),
-            explode(',', $config->params[Core::moduleId()][Core::KEY_ACCEPTED_COUNTRIES])
-        );
-
-        return (int) (
-            ((int)  $config->params[$methodId][Connector::KEY_ACTIVE] == 1)
-            && $currencyAccepted
-            && $countryAccepted
-        );
+        return $config->params[$methodId][Connector::KEY_ACTIVE] == 1;
     }
 }

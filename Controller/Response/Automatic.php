@@ -1,21 +1,21 @@
 <?php
 /**
- * Cmsbox.fr Magento 2 Paybox Payment.
+ * Naxero.com Magento 2 Paybox Payment.
  *
  * PHP version 7
  *
- * @category  Cmsbox
+ * @category  Naxero
  * @package   Paybox
-  * @author    Cmsbox Development Team <contact@cmsbox.fr>
- * @copyright 2019 Cmsbox.fr all rights reserved
+  * @author    Naxero Development Team <contact@naxero.com>
+ * @copyright 2019 Naxero.com all rights reserved
  * @license   https://opensource.org/licenses/mit-license.html MIT License
- * @link      https://www.cmsbox.fr
+ * @link      https://www.naxero.com
  */
 
-namespace Cmsbox\Paybox\Controller\Response;
+namespace Naxero\Paybox\Controller\Response;
  
-use Cmsbox\Paybox\Gateway\Processor\Connector;
-use Cmsbox\Paybox\Gateway\Config\Core;
+use Naxero\Paybox\Gateway\Processor\Connector;
+use Naxero\Paybox\Gateway\Config\Core;
 
 class Automatic extends \Magento\Framework\App\Action\Action
 {
@@ -54,11 +54,11 @@ class Automatic extends \Magento\Framework\App\Action\Action
      */
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
-        \Cmsbox\Paybox\Model\Service\OrderHandlerService $orderHandler,
+        \Naxero\Paybox\Model\Service\OrderHandlerService $orderHandler,
         \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
-        \Cmsbox\Paybox\Helper\Watchdog $watchdog,
-        \Cmsbox\Paybox\Gateway\Config\Config $config,
-        \Cmsbox\Paybox\Model\Service\MethodHandlerService $methodHandler
+        \Naxero\Paybox\Helper\Watchdog $watchdog,
+        \Naxero\Paybox\Gateway\Config\Config $config,
+        \Naxero\Paybox\Model\Service\MethodHandlerService $methodHandler
     ) {
         parent::__construct($context);
         
